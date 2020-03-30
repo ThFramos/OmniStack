@@ -1,3 +1,4 @@
+const generateUniqueId = require('../utils/generateUniqueId');
 const connection = require('../database/connection');
 const crypto = require('crypto');
 
@@ -16,7 +17,7 @@ module.exports = {
     
         const { name, email, whatsapp, city, uf} = request.body;
 
-        const id =  crypto.randomBytes(4).toString('HEX'); //await -> modo assincrono para return ser executado apenas após a finalização da inserção de dados
+        const id =  generateUniqueId(); //await -> modo assincrono para return ser executado apenas após a finalização da inserção de dados
     
     
 
